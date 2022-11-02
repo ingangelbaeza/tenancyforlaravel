@@ -11,7 +11,7 @@ use Stancl\JobPipeline\JobPipeline;
 use Stancl\Tenancy\Events;
 use Stancl\Tenancy\Jobs;
 use Stancl\Tenancy\Listeners;
-use Stancl\Tenancy\Middleware;
+use App\Middleware;
 
 class TenancyServiceProvider extends ServiceProvider
 {

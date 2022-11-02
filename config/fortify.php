@@ -2,6 +2,8 @@
 
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
+use App\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 return [
 
@@ -89,7 +91,12 @@ return [
     |
     */
 
-    'middleware' => ['web'],
+    'middleware' => [
+        'web',
+        'universal',
+        InitializeTenancyByDomain::class,
+        // PreventAccessFromCentralDomains::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
